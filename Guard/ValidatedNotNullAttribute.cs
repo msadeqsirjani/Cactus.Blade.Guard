@@ -1,0 +1,13 @@
+﻿using System;
+
+namespace Cactus.Blade.Guard
+{
+    /// <summary>
+    /// Add to methods that check input for null and throw if the input is null.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Parameter)]
+    public sealed class ValidatedNotNullAttribute : Attribute
+    {
+
+    }
+}

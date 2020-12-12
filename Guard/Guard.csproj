@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Cactus.Blade.Guard</AssemblyName>
+    <RootNamespace>Cactus.Blade.Guard</RootNamespace>
+    <Version>1.2.0</Version>
+    <Authors>Mohammad Sadeq Sirjani</Authors>
+    <Product>Cactus</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <NeutralLanguage>C#</NeutralLanguage>
+    <Description>A simple package with guard clause extensions.</Description>
+    <PackageReleaseNotes>A simple package with guard clause extensions.</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>cactus.png</PackageIcon>
+    <Copyright>@Copyright 2020</Copyright>
+    <PackageProjectUrl>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</RepositoryUrl>
+    <RepositoryType>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Image\cactus.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cactus.Blade.Core" Version="1.2.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.1.502
+solution: Cactus.Blade.Guard.sln
+install:
+  - dotnet restore
+script:
+  - dotnet msbuild /p:Guard=Release Cactus.Blade.Guard.sln
+  - dotnet restore
+  - dotnet test Guard.Test/Guard.Test.csproj
