@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ulong? Default(this IGuardClause _, ulong? input)
+    public static ulong? Default(this IGuard _, ulong? input)
     {
         return Guard.Against.Default<ulong?>(input, null, null);
     }
@@ -23,7 +23,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ulong? Default(this IGuardClause _, ulong? input, string paramName)
+    public static ulong? Default(this IGuard _, ulong? input, string paramName)
     {
         return Guard.Against.Default<ulong?>(input, paramName, null);
     }
@@ -37,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ulong? Default(this IGuardClause _, ulong? input, string paramName, string message)
+    public static ulong? Default(this IGuard _, ulong? input, string paramName, string message)
     {
         return Guard.Against.Default<ulong?>(input, paramName, message);
     }

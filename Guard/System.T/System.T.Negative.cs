@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    private static T Negative<T>(this IGuardClause _, T input)
+    private static T Negative<T>(this IGuard _, T input)
         where T : struct, IComparable
     {
         return Guard.Against.Negative(input, null, null);
@@ -24,7 +24,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    private static T Negative<T>(this IGuardClause _, T input, string paramName)
+    private static T Negative<T>(this IGuard _, T input, string paramName)
         where T : struct, IComparable
     {
         return Guard.Against.Negative(input, paramName, null);
@@ -39,7 +39,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    private static T Negative<T>(this IGuardClause _, T input, string paramName, string message)
+    private static T Negative<T>(this IGuard _, T input, string paramName, string message)
         where T : struct, IComparable
     {
         paramName ??= nameof(input);

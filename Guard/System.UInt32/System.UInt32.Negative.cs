@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static uint Negative(this IGuardClause _, uint input)
+    public static uint Negative(this IGuard _, uint input)
     {
         return Negative<uint>(_, input, null, null);
     }
@@ -23,7 +23,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static uint Negative(this IGuardClause _, uint input, string paramName)
+    public static uint Negative(this IGuard _, uint input, string paramName)
     {
         return Negative<uint>(_, input, paramName, null);
     }
@@ -37,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not negative.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static uint Negative(this IGuardClause _, uint input, string paramName, string message)
+    public static uint Negative(this IGuard _, uint input, string paramName, string message)
     {
         return Negative<uint>(_, input, paramName, message);
     }

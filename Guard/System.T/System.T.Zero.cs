@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Zero<T>(this IGuardClause _, T input)
+    public static T Zero<T>(this IGuard _, T input)
         where T : struct
     {
         input = Guard.Against.Zero(input, null, null);
@@ -28,7 +28,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Zero<T>(this IGuardClause _, T input, string paramName)
+    public static T Zero<T>(this IGuard _, T input, string paramName)
         where T : struct
     {
         input = Guard.Against.Zero(input, paramName, null);
@@ -45,7 +45,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Zero<T>(this IGuardClause _, T input, string paramName, string message)
+    public static T Zero<T>(this IGuard _, T input, string paramName, string message)
         where T : struct
     {
         paramName ??= nameof(input);

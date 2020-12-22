@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="_"></param>
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuardClause _, string input)
+    public static string Null(this IGuard _, string input)
     {
         input = Guard.Against.Null(input, null, null);
 
@@ -25,7 +25,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <param name="parameter"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuardClause _, string input, string parameter)
+    public static string Null(this IGuard _, string input, string parameter)
     {
         input = Guard.Against.Null(input, parameter, null);
 
@@ -41,7 +41,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuardClause _, string input, string paramName, string message)
+    public static string Null(this IGuard _, string input, string paramName, string message)
     {
         paramName ??= nameof(input);
         message ??= $"Required input {paramName} was null.";

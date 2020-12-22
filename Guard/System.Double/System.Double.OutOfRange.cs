@@ -13,7 +13,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static double OutOfRange(this IGuardClause _, double input, double rangeFrom, double rangeTo)
+    public static double OutOfRange(this IGuard _, double input, double rangeFrom, double rangeTo)
     {
         return Guard.Against.OutOfRange<double>(input, rangeFrom, rangeTo);
     }
@@ -28,7 +28,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static double OutOfRange(this IGuardClause _, double input, string paramName, double rangeFrom, double rangeTo)
+    public static double OutOfRange(this IGuard _, double input, string paramName, double rangeFrom, double rangeTo)
     {
         return Guard.Against.OutOfRange<double>(input, paramName, rangeFrom, rangeTo);
     }
@@ -44,7 +44,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static double OutOfRange(this IGuardClause _, double input, string paramName, string message, double rangeFrom, double rangeTo)
+    public static double OutOfRange(this IGuard _, double input, string paramName, string message, double rangeFrom, double rangeTo)
     {
         return Guard.Against.OutOfRange<double>(input, paramName, message, rangeFrom, rangeTo);
     }
@@ -57,7 +57,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
-    public static double OutOfRange<T>(this IGuardClause _, double input) where T : struct, Enum
+    public static double OutOfRange<T>(this IGuard _, double input) where T : struct, Enum
     {
         return Guard.Against.OutOfRange<T>(input, null, null);
     }
@@ -71,7 +71,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
-    public static double OutOfRange<T>(this IGuardClause _, double input, string paramName) where T : struct, Enum
+    public static double OutOfRange<T>(this IGuard _, double input, string paramName) where T : struct, Enum
     {
         return Guard.Against.OutOfRange<T>(input, paramName, null);
     }
@@ -86,7 +86,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
-    public static double OutOfRange<T>(this IGuardClause _, double input, string paramName, string message) where T : struct, Enum
+    public static double OutOfRange<T>(this IGuard _, double input, string paramName, string message) where T : struct, Enum
     {
         if (!Enum.IsDefined(typeof(T), input))
             throw new InvalidEnumArgumentException(paramName, input.ToInt32(), typeof(T));

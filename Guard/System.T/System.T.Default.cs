@@ -11,7 +11,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Default<T>(this IGuardClause _, T input)
+    public static T Default<T>(this IGuard _, T input)
     {
         return Guard.Against.Default<T>(input, null, null);
     }
@@ -24,7 +24,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Default<T>(this IGuardClause _, T input, string paramName)
+    public static T Default<T>(this IGuard _, T input, string paramName)
     {
         return Guard.Against.Default<T>(input, paramName, null);
     }
@@ -38,7 +38,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static T Default<T>(this IGuardClause _, T input, string paramName, string message)
+    public static T Default<T>(this IGuard _, T input, string paramName, string message)
     {
         paramName ??= nameof(input);
         message ??= $"Parameter [{paramName}] is default value for type {typeof(T).Name}";

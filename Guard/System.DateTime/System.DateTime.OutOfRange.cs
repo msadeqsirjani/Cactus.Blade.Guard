@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTime OutOfRange(this IGuardClause _, DateTime input, DateTime rangeFrom, DateTime rangeTo)
+    public static DateTime OutOfRange(this IGuard _, DateTime input, DateTime rangeFrom, DateTime rangeTo)
     {
         return Guard.Against.OutOfRange<DateTime>(input, rangeFrom, rangeTo);
     }
@@ -27,7 +27,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTime OutOfRange(this IGuardClause _, DateTime input, string paramName, DateTime rangeFrom, DateTime rangeTo)
+    public static DateTime OutOfRange(this IGuard _, DateTime input, string paramName, DateTime rangeFrom, DateTime rangeTo)
     {
         return Guard.Against.OutOfRange<DateTime>(input, paramName, rangeFrom, rangeTo);
     }
@@ -43,7 +43,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTime OutOfRange(this IGuardClause _, DateTime input, string paramName, string message, DateTime rangeFrom, DateTime rangeTo)
+    public static DateTime OutOfRange(this IGuard _, DateTime input, string paramName, string message, DateTime rangeFrom, DateTime rangeTo)
     {
         return Guard.Against.OutOfRange<DateTime>(input, paramName, message, rangeFrom, rangeTo);
     }

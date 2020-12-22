@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTimeOffset OutOfRange(this IGuardClause _, DateTimeOffset input, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
+    public static DateTimeOffset OutOfRange(this IGuard _, DateTimeOffset input, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
     {
         return Guard.Against.OutOfRange<DateTimeOffset>(input, rangeFrom, rangeTo);
     }
@@ -27,7 +27,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTimeOffset OutOfRange(this IGuardClause _, DateTimeOffset input, string paramName, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
+    public static DateTimeOffset OutOfRange(this IGuard _, DateTimeOffset input, string paramName, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
     {
         return Guard.Against.OutOfRange<DateTimeOffset>(input, paramName, rangeFrom, rangeTo);
     }
@@ -43,7 +43,7 @@ public static partial class GuardExtension
     /// <param name="rangeTo"></param>
     /// <returns><paramref name="input" /> if the value is not out of range.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static DateTimeOffset OutOfRange(this IGuardClause _, DateTimeOffset input, string paramName, string message, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
+    public static DateTimeOffset OutOfRange(this IGuard _, DateTimeOffset input, string paramName, string message, DateTimeOffset rangeFrom, DateTimeOffset rangeTo)
     {
         return Guard.Against.OutOfRange<DateTimeOffset>(input, paramName, message, rangeFrom, rangeTo);
     }

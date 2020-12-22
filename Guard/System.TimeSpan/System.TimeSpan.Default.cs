@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static TimeSpan Default(this IGuardClause _, TimeSpan input)
+    public static TimeSpan Default(this IGuard _, TimeSpan input)
     {
         return Guard.Against.Default<TimeSpan>(input, null, null);
     }
@@ -23,7 +23,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static TimeSpan Default(this IGuardClause _, TimeSpan input, string paramName)
+    public static TimeSpan Default(this IGuard _, TimeSpan input, string paramName)
     {
         return Guard.Against.Default<TimeSpan>(input, paramName, null);
     }
@@ -37,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static TimeSpan Default(this IGuardClause _, TimeSpan input, string paramName, string message)
+    public static TimeSpan Default(this IGuard _, TimeSpan input, string paramName, string message)
     {
         return Guard.Against.Default<TimeSpan>(input, paramName, message);
     }

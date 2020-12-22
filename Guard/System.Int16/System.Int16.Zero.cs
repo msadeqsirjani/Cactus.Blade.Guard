@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static short Zero(this IGuardClause _, short input)
+    public static short Zero(this IGuard _, short input)
     {
         return Guard.Against.Zero<short>(input, null, null);
     }
@@ -23,7 +23,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static short Zero(this IGuardClause _, short input, string paramName)
+    public static short Zero(this IGuard _, short input, string paramName)
     {
         return Guard.Against.Zero<short>(input, paramName, null);
     }
@@ -37,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not zero.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static short Zero(this IGuardClause _, short input, string paramName, string message)
+    public static short Zero(this IGuard _, short input, string paramName, string message)
     {
         return Guard.Against.Zero<short>(input, paramName, message);
     }

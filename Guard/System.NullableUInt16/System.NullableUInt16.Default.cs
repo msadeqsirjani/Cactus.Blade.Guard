@@ -10,7 +10,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ushort? Default(this IGuardClause _, ushort? input)
+    public static ushort? Default(this IGuard _, ushort? input)
     {
         return Guard.Against.Default<ushort?>(input, null, null);
     }
@@ -23,7 +23,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ushort? Default(this IGuardClause _, ushort? input, string paramName)
+    public static ushort? Default(this IGuard _, ushort? input, string paramName)
     {
         return Guard.Against.Default<ushort?>(input, paramName, null);
     }
@@ -37,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not default for that type.</returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ushort? Default(this IGuardClause _, ushort? input, string paramName, string message)
+    public static ushort? Default(this IGuard _, ushort? input, string paramName, string message)
     {
         return Guard.Against.Default<ushort?>(input, paramName, message);
     }

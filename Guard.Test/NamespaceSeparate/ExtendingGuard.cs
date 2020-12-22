@@ -8,7 +8,7 @@ namespace Guard.Test.NamespaceSeparate
     /// </summary>
     public static class FooGuard
     {
-        public static void Foo(this IGuardClause guardClause, string input, string parameterName)
+        public static void Foo(this IGuard guardClause, string input, string parameterName)
         {
             if (input?.ToLower() == "foo")
                 throw new ArgumentException("Should not have been foo!", parameterName);

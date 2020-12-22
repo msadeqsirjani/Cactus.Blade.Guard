@@ -9,7 +9,7 @@ public static partial class GuardExtension
     /// <param name="_"></param>
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not negative or zero.</returns>
-    public static ulong NegativeOrZero(this IGuardClause _, ulong input)
+    public static ulong NegativeOrZero(this IGuard _, ulong input)
     {
         return Guard.Against.NegativeOrZero<ulong>(input);
     }
@@ -21,7 +21,7 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <param name="paramName"></param>
     /// <returns><paramref name="input" /> if the value is not negative or zero.</returns>
-    public static ulong NegativeOrZero(this IGuardClause _, ulong input, string paramName)
+    public static ulong NegativeOrZero(this IGuard _, ulong input, string paramName)
     {
         return Guard.Against.NegativeOrZero<ulong>(input, paramName);
     }
@@ -34,7 +34,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not negative or zero.</returns>
-    public static ulong NegativeOrZero(this IGuardClause _, ulong input, string paramName, string message)
+    public static ulong NegativeOrZero(this IGuard _, ulong input, string paramName, string message)
     {
         return Guard.Against.NegativeOrZero<ulong>(input, paramName, message);
     }
