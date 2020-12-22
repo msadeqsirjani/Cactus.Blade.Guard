@@ -1,4 +1,6 @@
-﻿namespace Cactus.Blade.Guard
+﻿using System;
+
+namespace Cactus.Blade.Guard
 {
     /// <summary>
     /// An entry point to a set of Guard Clauses defined as extension methods on IGuardClause.
@@ -9,7 +11,9 @@
         /// <summary>
         /// An entry point to a set of Guard Clauses.
         /// </summary>
-        public static IGuardClause Against { get; } = new Guard();
+        private static readonly Lazy<IGuardClause> Lazy = new Lazy<IGuardClause>(() => new Guard());
+
+        public static IGuardClause Against => Lazy.Value;
 
         private Guard()
         {
