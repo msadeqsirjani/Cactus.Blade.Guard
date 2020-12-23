@@ -1,4 +1,5 @@
 ﻿using Cactus.Blade.Guard;
+using Cactus.Blade.Guard.Common;
 using System;
 
 public static partial class GuardExtension
@@ -40,7 +41,7 @@ public static partial class GuardExtension
     private static T NegativeOrZero<T>(this IGuard _, T input, string paramName, string message) where T : struct, IComparable
     {
         paramName ??= nameof(input);
-        message ??= $"Required input {paramName} cannot be zero or negative.";
+        message ??= Message.NegativeOrZero(input);
 
         if (input.CompareTo(default(T)) <= 0)
             throw new ArgumentException(message, paramName);
