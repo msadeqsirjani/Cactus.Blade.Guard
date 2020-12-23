@@ -1,6 +1,5 @@
 ﻿using Cactus.Blade.Guard;
 using Cactus.Blade.Guard.Common;
-using Cactus.Blade.Guard.Common.Exceptions;
 using System;
 using System.Linq;
 
@@ -26,6 +25,6 @@ public static partial class GuardExtension
 
         if (value.NotIn(values)) return value;
 
-        throw new ArgumentNotInRangeException(message, paramName);
+        throw new ArgumentOutOfRangeException(message, paramName);
     }
 }
