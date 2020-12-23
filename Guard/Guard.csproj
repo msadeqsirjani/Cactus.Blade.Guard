@@ -18,6 +18,7 @@
     <PackageProjectUrl>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</RepositoryUrl>
     <RepositoryType>https://github.com/mohammadsadeqsirjani/Cactus/tree/master/Guard</RepositoryType>
+    <UserSecretsId>dd73a0d3-8d5a-4eea-a30e-6ef9a1806c5d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cactus.Blade.Core" Version="1.2.4" />
+    <PackageReference Include="Cactus.Blade.Core" Version="1.2.5" />
   </ItemGroup>
 
 </Project>
