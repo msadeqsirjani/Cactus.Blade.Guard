@@ -17,7 +17,7 @@ public static partial class GuardExtension
     public static bool True(this IGuard _, bool input, string paramName, string message)
     {
         paramName ??= nameof(input);
-        message ??= Message.True(input);
+        message ??= Message.True(paramName);
 
         if (input) return true;
 
