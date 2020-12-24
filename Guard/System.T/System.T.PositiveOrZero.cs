@@ -44,7 +44,7 @@ public static partial class GuardExtension
         where T : struct, IComparable
     {
         paramName ??= nameof(input);
-        message ??= Message.Positive(input);
+        message ??= Message.PositiveOrZero(input);
 
         if (input.CompareTo(default(T)) >= 0)
             throw new ArgumentException(message, paramName);
