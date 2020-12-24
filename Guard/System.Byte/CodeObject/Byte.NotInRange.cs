@@ -4,22 +4,22 @@ using System;
 
 public static partial class GuardExtension
 {
-    public static byte NotInRange(this IGuard _, byte value, byte minimum, byte maximum)
+    public static IGuard NotInRange(this IGuard _, byte value, byte minimum, byte maximum)
     {
         return Guard.MustBe.NotInRange(value, null, null, minimum, maximum);
     }
 
-    public static byte NotInRange(this IGuard _, byte value, string paramName, byte minimum, byte maximum)
+    public static IGuard NotInRange(this IGuard _, byte value, string paramName, byte minimum, byte maximum)
     {
         return Guard.MustBe.NotInRange(value, paramName, null, minimum, maximum);
     }
 
-    public static byte NotInRange(this IGuard _, byte value, string paramName, string message, byte minimum, byte maximum)
+    public static IGuard NotInRange(this IGuard guard, byte value, string paramName, string message, byte minimum, byte maximum)
     {
         paramName ??= nameof(value);
         message ??= Message.NotInRange(value, minimum, maximum);
 
-        if (((short)value).NotInRange(minimum, maximum)) return value;
+        if (((short)value).NotInRange(minimum, maximum)) return guard;
 
         throw new ArgumentOutOfRangeException(message, paramName);
     }
