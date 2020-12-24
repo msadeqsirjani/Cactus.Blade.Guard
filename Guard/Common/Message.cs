@@ -198,11 +198,11 @@ namespace Cactus.Blade.Guard.Common
         public static string Between<T>(T value, T minimum, T maximum)
             => $"{value.GetType().Name} must be between {minimum} and {maximum}.";
 
-        public static string True(bool input)
-            => $"{input.GetType().Name} must be true.";
+        public static string True(string value)
+            => $"{value} must be true.";
 
-        public static string False(bool input)
-            => $"{input.GetType().Name} must be false.";
+        public static string False(string value)
+            => $"{value} must be false.";
 
         public static string Enum<T>(T input)
             => $"{input.GetType().Name} is not an enum input.";
