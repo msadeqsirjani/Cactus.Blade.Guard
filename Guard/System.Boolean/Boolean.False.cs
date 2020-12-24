@@ -6,18 +6,18 @@ public static partial class GuardExtension
 {
     public static bool False(this IGuard _, bool input)
     {
-        return Guard.MustBe.True(input, null, null);
+        return Guard.MustBe.False(input, null, null);
     }
 
     public static bool False(this IGuard _, bool input, string paramName)
     {
-        return Guard.MustBe.True(input, paramName, null);
+        return Guard.MustBe.False(input, paramName, null);
     }
 
     public static bool False(this IGuard _, bool input, string paramName, string message)
     {
         paramName ??= nameof(input);
-        message ??= Message.False(input);
+        message ??= Message.False(paramName);
 
         if (!input) return false;
 
