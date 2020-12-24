@@ -5,17 +5,17 @@ using System.Linq;
 
 public static partial class GuardExtension
 {
-    public static char In(this IGuard _, char value, params char[] values)
+    public static IGuard In(this IGuard _, char value, params char[] values)
     {
         return Guard.MustBe.In(value, null, null, values);
     }
 
-    public static char In(this IGuard _, char value, string paramName, params char[] values)
+    public static IGuard In(this IGuard _, char value, string paramName, params char[] values)
     {
         return Guard.MustBe.In(value, paramName, null, values);
     }
 
-    public static char In(this IGuard _, char value, string paramName, string message, params char[] values)
+    public static IGuard In(this IGuard guard, char value, string paramName, string message, params char[] values)
     {
         paramName ??= nameof(value);
         message ??= Message.In(value, values);
@@ -23,7 +23,7 @@ public static partial class GuardExtension
         if (!values.Any())
             throw new ArgumentNullException(Message.Null(values), nameof(values));
 
-        if (value.In(values)) return value;
+        if (value.In(values)) return guard;
 
         throw new ArgumentOutOfRangeException(message, paramName);
     }
