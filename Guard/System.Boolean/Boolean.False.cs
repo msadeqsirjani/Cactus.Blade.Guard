@@ -4,22 +4,22 @@ using System;
 
 public static partial class GuardExtension
 {
-    public static bool False(this IGuard _, bool input)
+    public static IGuard False(this IGuard _, bool input)
     {
         return Guard.MustBe.False(input, null, null);
     }
 
-    public static bool False(this IGuard _, bool input, string paramName)
+    public static IGuard False(this IGuard _, bool input, string paramName)
     {
         return Guard.MustBe.False(input, paramName, null);
     }
 
-    public static bool False(this IGuard _, bool input, string paramName, string message)
+    public static IGuard False(this IGuard guard, bool input, string paramName, string message)
     {
         paramName ??= nameof(input);
         message ??= Message.False(paramName);
 
-        if (!input) return false;
+        if (!input) return guard;
 
         throw new ArgumentException(message, paramName);
     }
