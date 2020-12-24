@@ -17,4 +17,4 @@ public static partial class GuardExtension
     {
         return Guard.MustBe.Default<TimeSpan>(input, paramName, message);
     }
-}}
+}
