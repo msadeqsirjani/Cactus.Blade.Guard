@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 public static partial class GuardExtension
 {
-    public static T NotDefault<T>(this IGuard _, T input)
+    public static IGuard NotDefault<T>(this IGuard _, T input)
     {
         return Guard.MustBe.NotDefault<T>(input, null, null);
     }
 
-    public static T NotDefault<T>(this IGuard _, T input, string paramName)
+    public static IGuard NotDefault<T>(this IGuard _, T input, string paramName)
     {
         return Guard.MustBe.NotDefault<T>(input, paramName, null);
     }
 
-    public static T NotDefault<T>(this IGuard _, T input, string paramName, string message)
+    public static IGuard NotDefault<T>(this IGuard guard, T input, string paramName, string message)
     {
         paramName ??= nameof(input);
         message ??= Message.NotDefault(paramName);
@@ -23,6 +23,6 @@ public static partial class GuardExtension
         if (!(EqualityComparer<T>.Default.Equals(input, default!) || input is null))
             throw new ArgumentException(message, paramName);
 
-        return input;
+        return guard;
     }
 }
