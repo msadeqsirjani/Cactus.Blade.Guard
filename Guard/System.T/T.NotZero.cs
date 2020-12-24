@@ -5,23 +5,19 @@ using System.Collections.Generic;
 
 public static partial class GuardExtension
 {
-    public static T NotZero<T>(this IGuard _, T input)
+    public static IGuard NotZero<T>(this IGuard _, T input)
         where T : struct
     {
-        input = Guard.MustBe.NotZero(input, null, null);
-
-        return input;
+        return Guard.MustBe.NotZero(input, null, null);
     }
 
-    public static T NotZero<T>(this IGuard _, T input, string paramName)
+    public static IGuard NotZero<T>(this IGuard _, T input, string paramName)
         where T : struct
     {
-        input = Guard.MustBe.NotZero(input, paramName, null);
-
-        return input;
+        return Guard.MustBe.NotZero(input, paramName, null);
     }
 
-    public static T NotZero<T>(this IGuard _, T input, string paramName, string message)
+    public static IGuard NotZero<T>(this IGuard guard, T input, string paramName, string message)
         where T : struct
     {
         paramName ??= nameof(input);
@@ -30,6 +26,6 @@ public static partial class GuardExtension
         if (!EqualityComparer<T>.Default.Equals(input, default))
             throw new ArgumentException(message, paramName);
 
-        return input;
+        return guard;
     }
 }
