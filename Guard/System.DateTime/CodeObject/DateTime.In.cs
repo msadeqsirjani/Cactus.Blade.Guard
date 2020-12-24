@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static DateTime NotIn(this IGuard _, DateTime value, params DateTime[] values)
     {
-        return Guard.Against.NotIn(value, null, null, values);
+        return Guard.MustBe.NotIn(value, null, null, values);
     }
 
     public static DateTime NotIn(this IGuard _, DateTime value, string paramName, params DateTime[] values)
     {
-        return Guard.Against.NotIn(value, paramName, null, values);
+        return Guard.MustBe.NotIn(value, paramName, null, values);
     }
 
     public static DateTime NotIn(this IGuard _, DateTime value, string paramName, string message, params DateTime[] values)

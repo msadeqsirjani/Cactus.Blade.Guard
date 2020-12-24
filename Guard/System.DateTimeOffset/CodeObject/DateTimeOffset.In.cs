@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static DateTimeOffset In(this IGuard _, DateTimeOffset value, params DateTimeOffset[] values)
     {
-        return Guard.Against.In(value, null, null, values);
+        return Guard.MustBe.In(value, null, null, values);
     }
 
     public static DateTimeOffset In(this IGuard _, DateTimeOffset value, string paramName, params DateTimeOffset[] values)
     {
-        return Guard.Against.In(value, paramName, null, values);
+        return Guard.MustBe.In(value, paramName, null, values);
     }
 
     public static DateTimeOffset In(this IGuard _, DateTimeOffset value, string paramName, string message, params DateTimeOffset[] values)

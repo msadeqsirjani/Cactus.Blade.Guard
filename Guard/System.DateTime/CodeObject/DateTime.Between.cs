@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static DateTime Between(this IGuard _, DateTime value, DateTime minimum, DateTime maximum)
     {
-        return Guard.Against.Between(value, null, null, minimum, maximum);
+        return Guard.MustBe.Between(value, null, null, minimum, maximum);
     }
 
     public static DateTime Between(this IGuard _, DateTime value, string paramName, DateTime minimum, DateTime maximum)
     {
-        return Guard.Against.Between(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.Between(value, paramName, null, minimum, maximum);
     }
 
     public static DateTime Between(this IGuard _, DateTime value, string paramName, string message, DateTime minimum, DateTime maximum)

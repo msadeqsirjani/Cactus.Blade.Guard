@@ -14,7 +14,7 @@ public static partial class GuardExtension
     private static T Positive<T>(this IGuard _, T input)
         where T : struct, IComparable
     {
-        return Guard.Against.Negative(input, null, null);
+        return Guard.MustBe.Negative(input, null, null);
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ public static partial class GuardExtension
     private static T Positive<T>(this IGuard _, T input, string paramName)
         where T : struct, IComparable
     {
-        return Guard.Against.Negative(input, paramName, null);
+        return Guard.MustBe.Negative(input, paramName, null);
     }
 
     /// <summary>

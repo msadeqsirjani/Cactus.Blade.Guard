@@ -13,7 +13,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not negative or zero.</returns>
     private static T NegativeOrZero<T>(this IGuard _, T input) where T : struct, IComparable
     {
-        return Guard.Against.NegativeOrZero(input, null, null);
+        return Guard.MustBe.NegativeOrZero(input, null, null);
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not negative or zero.</returns>
     private static T NegativeOrZero<T>(this IGuard _, T input, string paramName) where T : struct, IComparable
     {
-        return Guard.Against.NegativeOrZero(input, paramName, null);
+        return Guard.MustBe.NegativeOrZero(input, paramName, null);
     }
 
     /// <summary>

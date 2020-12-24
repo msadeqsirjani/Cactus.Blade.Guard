@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not null.</returns>
     public static T Null<T>(this IGuard _, T input)
     {
-        return Guard.Against.Null<T>(input, null, null);
+        return Guard.MustBe.Null<T>(input, null, null);
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not null.</returns>
     public static T Null<T>(this IGuard _, T input, string parameter)
     {
-        return Guard.Against.Null(input, parameter, null);
+        return Guard.MustBe.Null(input, parameter, null);
     }
 
     /// <summary>

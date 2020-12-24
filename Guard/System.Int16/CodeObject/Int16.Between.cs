@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static short Between(this IGuard _, short value, short minimum, short maximum)
     {
-        return Guard.Against.Between(value, null, null, minimum, maximum);
+        return Guard.MustBe.Between(value, null, null, minimum, maximum);
     }
 
     public static short Between(this IGuard _, short value, string paramName, short minimum, short maximum)
     {
-        return Guard.Against.Between(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.Between(value, paramName, null, minimum, maximum);
     }
 
     public static short Between(this IGuard _, short value, string paramName, string message, short minimum, short maximum)

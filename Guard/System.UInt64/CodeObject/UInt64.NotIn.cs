@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static ulong NotIn(this IGuard _, ulong value, params ulong[] values)
     {
-        return Guard.Against.NotIn(value, null, null, values);
+        return Guard.MustBe.NotIn(value, null, null, values);
     }
 
     public static ulong NotIn(this IGuard _, ulong value, string paramName, params ulong[] values)
     {
-        return Guard.Against.NotIn(value, paramName, null, values);
+        return Guard.MustBe.NotIn(value, paramName, null, values);
     }
 
     public static ulong NotIn(this IGuard _, ulong value, string paramName, string message, params ulong[] values)

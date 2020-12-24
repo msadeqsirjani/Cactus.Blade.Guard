@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static byte In(this IGuard _, byte value, params byte[] values)
     {
-        return Guard.Against.In(value, null, null, values);
+        return Guard.MustBe.In(value, null, null, values);
     }
 
     public static byte In(this IGuard _, byte value, string paramName, params byte[] values)
     {
-        return Guard.Against.In(value, paramName, null, values);
+        return Guard.MustBe.In(value, paramName, null, values);
     }
 
     public static byte In(this IGuard _, byte value, string paramName, string message, params byte[] values)

@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static decimal NotInRange(this IGuard _, decimal value, decimal minimum, decimal maximum)
     {
-        return Guard.Against.NotInRange(value, null, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, null, null, minimum, maximum);
     }
 
     public static decimal NotInRange(this IGuard _, decimal value, string paramName, decimal minimum, decimal maximum)
     {
-        return Guard.Against.NotInRange(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, paramName, null, minimum, maximum);
     }
 
     public static decimal NotInRange(this IGuard _, decimal value, string paramName, string message, decimal minimum, decimal maximum)

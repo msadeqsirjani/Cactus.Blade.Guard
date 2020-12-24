@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static string Default(this IGuard _, string input)
     {
-        return Guard.Against.Default<string>(input, null, null);
+        return Guard.MustBe.Default<string>(input, null, null);
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static string Default(this IGuard _, string input, string paramName)
     {
-        return Guard.Against.Default<string>(input, paramName, null);
+        return Guard.MustBe.Default<string>(input, paramName, null);
     }
 
     /// <summary>
@@ -39,6 +39,6 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static string Default(this IGuard _, string input, string paramName, string message)
     {
-        return Guard.Against.Default<string>(input, paramName, message);
+        return Guard.MustBe.Default<string>(input, paramName, message);
     }
 }

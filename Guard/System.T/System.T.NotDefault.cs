@@ -14,7 +14,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static T NotDefault<T>(this IGuard _, T input)
     {
-        return Guard.Against.NotDefault<T>(input, null, null);
+        return Guard.MustBe.NotDefault<T>(input, null, null);
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static T NotDefault<T>(this IGuard _, T input, string paramName)
     {
-        return Guard.Against.NotDefault<T>(input, paramName, null);
+        return Guard.MustBe.NotDefault<T>(input, paramName, null);
     }
 
     /// <summary>

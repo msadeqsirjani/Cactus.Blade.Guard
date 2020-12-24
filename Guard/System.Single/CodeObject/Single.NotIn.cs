@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static float NotIn(this IGuard _, float value, params float[] values)
     {
-        return Guard.Against.NotIn(value, null, null, values);
+        return Guard.MustBe.NotIn(value, null, null, values);
     }
 
     public static float NotIn(this IGuard _, float value, string paramName, params float[] values)
     {
-        return Guard.Against.NotIn(value, paramName, null, values);
+        return Guard.MustBe.NotIn(value, paramName, null, values);
     }
 
     public static float NotIn(this IGuard _, float value, string paramName, string message, params float[] values)

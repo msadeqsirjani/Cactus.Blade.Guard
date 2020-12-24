@@ -4,16 +4,16 @@ public static partial class GuardExtension
 {
     public static long Default(this IGuard _, long input)
     {
-        return Guard.Against.Default(input, null, null);
+        return Guard.MustBe.Default(input, null, null);
     }
 
     public static long Default(this IGuard _, long input, string paramName)
     {
-        return Guard.Against.Default(input, paramName, null);
+        return Guard.MustBe.Default(input, paramName, null);
     }
 
     public static long Default(this IGuard _, long input, string paramName, string message)
     {
-        return Guard.Against.Default<long>(input, paramName, message);
+        return Guard.MustBe.Default<long>(input, paramName, message);
     }
 }

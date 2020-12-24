@@ -12,7 +12,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static TimeSpan Default(this IGuard _, TimeSpan input)
     {
-        return Guard.Against.Default<TimeSpan>(input, null, null);
+        return Guard.MustBe.Default<TimeSpan>(input, null, null);
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static TimeSpan Default(this IGuard _, TimeSpan input, string paramName)
     {
-        return Guard.Against.Default<TimeSpan>(input, paramName, null);
+        return Guard.MustBe.Default<TimeSpan>(input, paramName, null);
     }
 
     /// <summary>
@@ -39,6 +39,6 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentException"></exception>
     public static TimeSpan Default(this IGuard _, TimeSpan input, string paramName, string message)
     {
-        return Guard.Against.Default<TimeSpan>(input, paramName, message);
+        return Guard.MustBe.Default<TimeSpan>(input, paramName, message);
     }
 }

@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static DateTime InRange(this IGuard _, DateTime value, DateTime minimum, DateTime maximum)
     {
-        return Guard.Against.InRange(value, null, null, minimum, maximum);
+        return Guard.MustBe.InRange(value, null, null, minimum, maximum);
     }
 
     public static DateTime InRange(this IGuard _, DateTime value, string paramName, DateTime minimum, DateTime maximum)
     {
-        return Guard.Against.InRange(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.InRange(value, paramName, null, minimum, maximum);
     }
 
     public static DateTime InRange(this IGuard _, DateTime value, string paramName, string message, DateTime minimum, DateTime maximum)

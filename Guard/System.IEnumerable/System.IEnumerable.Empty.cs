@@ -14,7 +14,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not Empty.</returns>
     public static IEnumerable<TCollection> Empty<TCollection>(this IGuard _, IEnumerable<TCollection> input, Func<TCollection, bool> predicate = null)
     {
-        return Guard.Against.Empty(input, null, null, predicate);
+        return Guard.MustBe.Empty(input, null, null, predicate);
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public static partial class GuardExtension
     /// <returns><paramref name="input" /> if the value is not Empty.</returns>
     public static IEnumerable<TCollection> Empty<TCollection>(this IGuard _, IEnumerable<TCollection> input, string parameter, Func<TCollection, bool> predicate = null)
     {
-        return Guard.Against.Empty(input, parameter, null, predicate);
+        return Guard.MustBe.Empty(input, parameter, null, predicate);
     }
 
     /// <summary>

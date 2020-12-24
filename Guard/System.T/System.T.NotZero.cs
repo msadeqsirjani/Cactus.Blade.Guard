@@ -8,7 +8,7 @@ public static partial class GuardExtension
     public static T NotZero<T>(this IGuard _, T input)
         where T : struct
     {
-        input = Guard.Against.NotZero(input, null, null);
+        input = Guard.MustBe.NotZero(input, null, null);
 
         return input;
     }
@@ -16,7 +16,7 @@ public static partial class GuardExtension
     public static T NotZero<T>(this IGuard _, T input, string paramName)
         where T : struct
     {
-        input = Guard.Against.NotZero(input, paramName, null);
+        input = Guard.MustBe.NotZero(input, paramName, null);
 
         return input;
     }

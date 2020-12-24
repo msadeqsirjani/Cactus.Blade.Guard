@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static float Between(this IGuard _, float value, float minimum, float maximum)
     {
-        return Guard.Against.Between(value, null, null, minimum, maximum);
+        return Guard.MustBe.Between(value, null, null, minimum, maximum);
     }
 
     public static float Between(this IGuard _, float value, string paramName, float minimum, float maximum)
     {
-        return Guard.Against.Between(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.Between(value, paramName, null, minimum, maximum);
     }
 
     public static float Between(this IGuard _, float value, string paramName, string message, float minimum, float maximum)

@@ -4,16 +4,16 @@ public static partial class GuardExtension
 {
     public static short NegativeOrZero(this IGuard _, short input)
     {
-        return Guard.Against.NegativeOrZero(input, null, null);
+        return Guard.MustBe.NegativeOrZero(input, null, null);
     }
 
     public static short NegativeOrZero(this IGuard _, short input, string paramName)
     {
-        return Guard.Against.NegativeOrZero(input, paramName, null);
+        return Guard.MustBe.NegativeOrZero(input, paramName, null);
     }
 
     public static short NegativeOrZero(this IGuard _, short input, string paramName, string message)
     {
-        return Guard.Against.NegativeOrZero<short>(input, paramName, message);
+        return Guard.MustBe.NegativeOrZero<short>(input, paramName, message);
     }
 }

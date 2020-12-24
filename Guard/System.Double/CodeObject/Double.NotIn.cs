@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static double NotIn(this IGuard _, double value, params double[] values)
     {
-        return Guard.Against.NotIn(value, null, null, values);
+        return Guard.MustBe.NotIn(value, null, null, values);
     }
 
     public static double NotIn(this IGuard _, double value, string paramName, params double[] values)
     {
-        return Guard.Against.NotIn(value, paramName, null, values);
+        return Guard.MustBe.NotIn(value, paramName, null, values);
     }
 
     public static double NotIn(this IGuard _, double value, string paramName, string message, params double[] values)

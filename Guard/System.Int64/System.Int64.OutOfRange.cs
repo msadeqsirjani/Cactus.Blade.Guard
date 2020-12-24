@@ -15,7 +15,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static long OutOfRange(this IGuard _, long input, long rangeFrom, long rangeTo)
     {
-        return Guard.Against.OutOfRange<long>(input, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<long>(input, rangeFrom, rangeTo);
     }
 
     /// <summary>
@@ -30,7 +30,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static long OutOfRange(this IGuard _, long input, string paramName, long rangeFrom, long rangeTo)
     {
-        return Guard.Against.OutOfRange<long>(input, paramName, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<long>(input, paramName, rangeFrom, rangeTo);
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static long OutOfRange(this IGuard _, long input, string paramName, string message, long rangeFrom, long rangeTo)
     {
-        return Guard.Against.OutOfRange<long>(input, paramName, message, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<long>(input, paramName, message, rangeFrom, rangeTo);
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public static partial class GuardExtension
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public static long OutOfRange<T>(this IGuard _, long input) where T : struct, Enum
     {
-        return Guard.Against.OutOfRange<T>(input, null, null);
+        return Guard.MustBe.OutOfRange<T>(input, null, null);
     }
 
     /// <summary>
@@ -73,7 +73,7 @@ public static partial class GuardExtension
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public static long OutOfRange<T>(this IGuard _, long input, string paramName) where T : struct, Enum
     {
-        return Guard.Against.OutOfRange<T>(input, paramName, null);
+        return Guard.MustBe.OutOfRange<T>(input, paramName, null);
     }
 
     /// <summary>

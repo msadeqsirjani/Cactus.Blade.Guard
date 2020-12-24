@@ -8,7 +8,7 @@ public static partial class GuardExtension
     public static T Zero<T>(this IGuard _, T input)
         where T : struct
     {
-        input = Guard.Against.Zero(input, null, null);
+        input = Guard.MustBe.Zero(input, null, null);
 
         return input;
     }
@@ -16,7 +16,7 @@ public static partial class GuardExtension
     public static T Zero<T>(this IGuard _, T input, string paramName)
         where T : struct
     {
-        input = Guard.Against.Zero(input, paramName, null);
+        input = Guard.MustBe.Zero(input, paramName, null);
 
         return input;
     }

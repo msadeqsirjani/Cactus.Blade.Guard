@@ -17,7 +17,7 @@ public static partial class GuardExtension
     internal static T OutOfRange<T>(this IGuard _, T input, T rangeFrom,
         T rangeTo)
     {
-        input = Guard.Against.OutOfRange<T>(input, null, null, rangeTo, rangeFrom);
+        input = Guard.MustBe.OutOfRange<T>(input, null, null, rangeTo, rangeFrom);
 
         return input;
     }
@@ -35,7 +35,7 @@ public static partial class GuardExtension
     internal static T OutOfRange<T>(this IGuard _, T input, string paramName, T rangeFrom,
         T rangeTo)
     {
-        input = Guard.Against.OutOfRange<T>(input, paramName, null, rangeTo, rangeFrom);
+        input = Guard.MustBe.OutOfRange<T>(input, paramName, null, rangeTo, rangeFrom);
 
         return input;
     }
@@ -86,7 +86,7 @@ public static partial class GuardExtension
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public static T OutOfRange<T>(this IGuard _, T input) where T : struct, Enum
     {
-        return Guard.Against.OutOfRange<T>(input, null, null);
+        return Guard.MustBe.OutOfRange<T>(input, null, null);
     }
 
     /// <summary>
@@ -100,7 +100,7 @@ public static partial class GuardExtension
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public static T OutOfRange<T>(this IGuard _, T input, string paramName) where T : struct, Enum
     {
-        return Guard.Against.OutOfRange<T>(input, paramName, null);
+        return Guard.MustBe.OutOfRange<T>(input, paramName, null);
     }
 
     /// <summary>

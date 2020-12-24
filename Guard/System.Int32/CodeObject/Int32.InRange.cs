@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static int InRange(this IGuard _, int value, int minimum, int maximum)
     {
-        return Guard.Against.InRange(value, null, null, minimum, maximum);
+        return Guard.MustBe.InRange(value, null, null, minimum, maximum);
     }
 
     public static int InRange(this IGuard _, int value, string paramName, int minimum, int maximum)
     {
-        return Guard.Against.InRange(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.InRange(value, paramName, null, minimum, maximum);
     }
 
     public static int InRange(this IGuard _, int value, string paramName, string message, int minimum, int maximum)

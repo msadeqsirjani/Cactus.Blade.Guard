@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static DateTimeOffset NotInRange(this IGuard _, DateTimeOffset value, DateTimeOffset minimum, DateTimeOffset maximum)
     {
-        return Guard.Against.NotInRange(value, null, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, null, null, minimum, maximum);
     }
 
     public static DateTimeOffset NotInRange(this IGuard _, DateTimeOffset value, string paramName, DateTimeOffset minimum, DateTimeOffset maximum)
     {
-        return Guard.Against.NotInRange(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, paramName, null, minimum, maximum);
     }
 
     public static DateTimeOffset NotInRange(this IGuard _, DateTimeOffset value, string paramName, string message, DateTimeOffset minimum, DateTimeOffset maximum)

@@ -7,12 +7,12 @@ public static partial class GuardExtension
 {
     public static decimal NotIn(this IGuard _, decimal value, params decimal[] values)
     {
-        return Guard.Against.NotIn(value, null, null, values);
+        return Guard.MustBe.NotIn(value, null, null, values);
     }
 
     public static decimal NotIn(this IGuard _, decimal value, string paramName, params decimal[] values)
     {
-        return Guard.Against.NotIn(value, paramName, null, values);
+        return Guard.MustBe.NotIn(value, paramName, null, values);
     }
 
     public static decimal NotIn(this IGuard _, decimal value, string paramName, string message, params decimal[] values)

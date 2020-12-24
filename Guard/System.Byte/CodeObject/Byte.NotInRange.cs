@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static byte NotInRange(this IGuard _, byte value, byte minimum, byte maximum)
     {
-        return Guard.Against.NotInRange(value, null, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, null, null, minimum, maximum);
     }
 
     public static byte NotInRange(this IGuard _, byte value, string paramName, byte minimum, byte maximum)
     {
-        return Guard.Against.NotInRange(value, paramName, null, minimum, maximum);
+        return Guard.MustBe.NotInRange(value, paramName, null, minimum, maximum);
     }
 
     public static byte NotInRange(this IGuard _, byte value, string paramName, string message, byte minimum, byte maximum)

@@ -14,7 +14,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static TimeSpan OutOfRange(this IGuard _, TimeSpan input, TimeSpan rangeFrom, TimeSpan rangeTo)
     {
-        return Guard.Against.OutOfRange<TimeSpan>(input, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<TimeSpan>(input, rangeFrom, rangeTo);
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static TimeSpan OutOfRange(this IGuard _, TimeSpan input, string paramName, TimeSpan rangeFrom, TimeSpan rangeTo)
     {
-        return Guard.Against.OutOfRange<TimeSpan>(input, paramName, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<TimeSpan>(input, paramName, rangeFrom, rangeTo);
     }
 
     /// <summary>
@@ -45,6 +45,6 @@ public static partial class GuardExtension
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static TimeSpan OutOfRange(this IGuard _, TimeSpan input, string paramName, string message, TimeSpan rangeFrom, TimeSpan rangeTo)
     {
-        return Guard.Against.OutOfRange<TimeSpan>(input, paramName, message, rangeFrom, rangeTo);
+        return Guard.MustBe.OutOfRange<TimeSpan>(input, paramName, message, rangeFrom, rangeTo);
     }
 }

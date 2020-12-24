@@ -6,12 +6,12 @@ public static partial class GuardExtension
 {
     public static bool True(this IGuard _, bool input)
     {
-        return Guard.Against.True(input, null, null);
+        return Guard.MustBe.True(input, null, null);
     }
 
     public static bool True(this IGuard _, bool input, string paramName)
     {
-        return Guard.Against.True(input, paramName, null);
+        return Guard.MustBe.True(input, paramName, null);
     }
 
     public static bool True(this IGuard _, bool input, string paramName, string message)

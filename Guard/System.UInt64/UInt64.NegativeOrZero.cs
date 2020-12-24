@@ -4,16 +4,16 @@ public static partial class GuardExtension
 {
     public static ulong NegativeOrZero(this IGuard _, ulong input)
     {
-        return Guard.Against.NegativeOrZero(input, null, null);
+        return Guard.MustBe.NegativeOrZero(input, null, null);
     }
 
     public static ulong NegativeOrZero(this IGuard _, ulong input, string paramName)
     {
-        return Guard.Against.NegativeOrZero(input, paramName, null);
+        return Guard.MustBe.NegativeOrZero(input, paramName, null);
     }
 
     public static ulong NegativeOrZero(this IGuard _, ulong input, string paramName, string message)
     {
-        return Guard.Against.NegativeOrZero<ulong>(input, paramName, message);
+        return Guard.MustBe.NegativeOrZero<ulong>(input, paramName, message);
     }
 }
