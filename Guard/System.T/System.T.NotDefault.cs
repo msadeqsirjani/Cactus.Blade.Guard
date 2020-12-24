@@ -44,7 +44,7 @@ public static partial class GuardExtension
         paramName ??= nameof(input);
         message ??= Message.NotDefault(input);
 
-        if (EqualityComparer<T>.Default.Equals(input, default!) || input is null)
+        if (!(EqualityComparer<T>.Default.Equals(input, default!) || input is null))
             throw new ArgumentException(message, paramName);
 
         return input;
