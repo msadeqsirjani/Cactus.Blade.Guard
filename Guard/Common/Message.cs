@@ -90,6 +90,9 @@ namespace Cactus.Blade.Guard.Common
         public static string Positive<T>(T input)
             => $"{input.GetType().Name} must be greater than zero.";
 
+        public static string PositiveOrZero<T>(T input)
+            => $"{input.GetType().Name} must be greater than or equal to zero.";
+
         public static string NotPositive<T>(T input)
             => $"{input.GetType().Name} must be zero or less.";
 
@@ -97,7 +100,7 @@ namespace Cactus.Blade.Guard.Common
             => $"{input.GetType().Name} must be less than zero.";
 
         public static string NegativeOrZero<T>(T input)
-            => $"{input.GetType().Name} must be less than or equal zero.";
+            => $"{input.GetType().Name} must be less than or equal to zero.";
 
         public static string NotNegative<T>(T input)
             => $"{input.GetType().Name} must be zero or greater.";
