@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Guard.Test
 {
-    public class GuardAgainstOutOfRangeForDecimal
+    public class GuardMustBeOutOfRangeForDecimal
     {
         [Theory]
         [InlineData(1.0, 1.0, 1.0)]
@@ -13,7 +13,7 @@ namespace Guard.Test
         [InlineData(3.0, 1.0, 3.0)]
         public void DoesNothingGivenInRangeValue(decimal input, decimal rangeFrom, decimal rangeTo)
         {
-            Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo);
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo);
         }
 
         [Theory]
@@ -22,7 +22,7 @@ namespace Guard.Test
         [InlineData(4.0, 1.0, 3.0)]
         public void ThrowsGivenOutOfRangeValue(decimal input, decimal rangeFrom, decimal rangeTo)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -31,7 +31,7 @@ namespace Guard.Test
         [InlineData(4.0, 3.0, 1.0)]
         public void ThrowsGivenInvalidArgumentValue(decimal input, decimal rangeFrom, decimal rangeTo)
         {
-            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -41,7 +41,7 @@ namespace Guard.Test
         [InlineData(3.0, 3.0, 3.0, 3.0)]
         public void ReturnsExpectedValueGivenInRangeValue(decimal input, decimal rangeFrom, decimal rangeTo, decimal expected)
         {
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
     }
 }
