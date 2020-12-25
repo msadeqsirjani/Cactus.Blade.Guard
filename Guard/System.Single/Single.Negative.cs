@@ -2,17 +2,17 @@
 
 public static partial class GuardExtension
 {
-    public static float Negative(this IGuard _, float input)
+    public static IGuard Negative(this IGuard _, float input)
     {
         return Guard.MustBe.Negative(input, null, null);
     }
 
-    public static float Negative(this IGuard _, float input, string paramName)
+    public static IGuard Negative(this IGuard _, float input, string paramName)
     {
         return Guard.MustBe.Negative(input, paramName, null);
     }
 
-    public static float Negative(this IGuard _, float input, string paramName, string message)
+    public static IGuard Negative(this IGuard _, float input, string paramName, string message)
     {
         return Guard.MustBe.Negative<float>(input, paramName, message);
     }
