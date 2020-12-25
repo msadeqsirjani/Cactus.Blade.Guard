@@ -5,12 +5,12 @@ public static partial class GuardExtension
 {
     public static IGuard Default(this IGuard _, DateTimeOffset input)
     {
-        return Guard.MustBe.Default(input, null, null);
+        return Guard.MustBe.Default<DateTimeOffset>(input);
     }
 
     public static IGuard Default(this IGuard _, DateTimeOffset input, string paramName)
     {
-        return Guard.MustBe.Default(input, paramName, null);
+        return Guard.MustBe.Default<DateTimeOffset>(input, paramName);
     }
 
     public static IGuard Default(this IGuard _, DateTimeOffset input, string paramName, string message)
