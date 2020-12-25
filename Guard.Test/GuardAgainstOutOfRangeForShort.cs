@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Guard.Test
 {
-    public class GuardAgainstOutOfRangeForShort
+    public class GuardMustBeOutOfRangeForShort
     {
         [Theory]
         [InlineData(1, 1, 1)]
@@ -13,7 +13,7 @@ namespace Guard.Test
         [InlineData(3, 1, 3)]
         public void DoesNothingGivenInRangeValue(short input, short rangeFrom, short rangeTo)
         {
-            Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo);
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo);
         }
 
         [Theory]
@@ -22,7 +22,7 @@ namespace Guard.Test
         [InlineData(4, 1, 3)]
         public void ThrowsGivenOutOfRangeValue(short input, short rangeFrom, short rangeTo)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -31,7 +31,7 @@ namespace Guard.Test
         [InlineData(4, 3, 1)]
         public void ThrowsGivenInvalidArgumentValue(short input, short rangeFrom, short rangeTo)
         {
-            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -41,7 +41,7 @@ namespace Guard.Test
         [InlineData(3, 1, 3, 3)]
         public void ReturnsExpectedValueGivenInRangeValue(short input, short rangeFrom, short rangeTo, short expected)
         {
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
     }
 }
