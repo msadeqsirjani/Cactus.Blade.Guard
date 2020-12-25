@@ -4,12 +4,12 @@ public static partial class GuardExtension
 {
     public static IGuard NotZero(this IGuard _, ulong input)
     {
-        return Guard.MustBe.NotZero(input, null, null);
+        return Guard.MustBe.NotZero<ulong>(input);
     }
 
     public static IGuard NotZero(this IGuard _, ulong input, string paramName)
     {
-        return Guard.MustBe.NotZero(input, paramName, null);
+        return Guard.MustBe.NotZero<ulong>(input, paramName);
     }
 
 
