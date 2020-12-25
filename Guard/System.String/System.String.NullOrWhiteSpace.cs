@@ -10,11 +10,9 @@ public static partial class GuardExtension
     /// <param name="_"></param>
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string NullOrWhiteSpace(this IGuard _, string input)
+    public static IGuard NullOrWhiteSpace(this IGuard _, string input)
     {
-        input = Guard.MustBe.Null(input, null, null);
-
-        return input;
+        return Guard.MustBe.Null(input, null, null);
     }
 
     /// <summary>
@@ -25,11 +23,9 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <param name="parameter"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string NullOrWhiteSpace(this IGuard _, string input, string parameter)
+    public static IGuard NullOrWhiteSpace(this IGuard _, string input, string parameter)
     {
-        input = Guard.MustBe.NullOrWhiteSpace(input, parameter, null);
-
-        return input;
+        return Guard.MustBe.NullOrWhiteSpace(input, parameter, null);
     }
 
     /// <summary>
@@ -41,7 +37,7 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string NullOrWhiteSpace(this IGuard _, string input, string paramName, string message)
+    public static IGuard NullOrWhiteSpace(this IGuard _, string input, string paramName, string message)
     {
         paramName ??= nameof(input);
         message ??= $"Required input {paramName} was null or empty.";
@@ -49,6 +45,6 @@ public static partial class GuardExtension
         if (input.IsNullOrWhiteSpace())
             throw new ArgumentNullException(paramName, message);
 
-        return input;
+        return _;
     }
 }
