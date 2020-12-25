@@ -5,17 +5,17 @@ using System.Linq;
 
 public static partial class GuardExtension
 {
-    public static ulong In(this IGuard _, ulong value, params ulong[] values)
+    public static IGuard In(this IGuard _, ulong value, params ulong[] values)
     {
         return Guard.MustBe.In(value, null, null, values);
     }
 
-    public static ulong In(this IGuard _, ulong value, string paramName, params ulong[] values)
+    public static IGuard In(this IGuard _, ulong value, string paramName, params ulong[] values)
     {
         return Guard.MustBe.In(value, paramName, null, values);
     }
 
-    public static ulong In(this IGuard _, ulong value, string paramName, string message, params ulong[] values)
+    public static IGuard In(this IGuard _, ulong value, string paramName, string message, params ulong[] values)
     {
         paramName ??= nameof(value);
         message ??= Message.In(value, values);
@@ -23,7 +23,7 @@ public static partial class GuardExtension
         if (!values.Any())
             throw new ArgumentNullException(Message.Null(values), nameof(values));
 
-        if (value.In(values)) return value;
+        if (value.In(values)) return _;
 
         throw new ArgumentOutOfRangeException(message, paramName);
     }
