@@ -24,15 +24,6 @@ namespace Cactus.Blade.Guard.Common
         public static string NotNull<T>(T input)
             => $"{input.GetType().Name} must not be null.";
 
-        public static string NotNull<T>(in IGuard _, T input)
-            => $"{input.GetType().Name} cannot be null.";
-
-        public static string NotAllNull(string name1, string name2)
-            => $"{name1} and {name2} cannot both be null.";
-
-        public static string NotAllNull(string name1, string name2, string name3)
-            => $"{name1}, {name2} and {name3} cannot all be null.";
-
         public static string Default<T>(T input)
             => $"{input.GetType().Name} must be {default(T)!}.";
 
@@ -66,14 +57,14 @@ namespace Cactus.Blade.Guard.Common
         public static string NotType(Type input, Type type)
             => $"{input} cannot be an instance of type {type}.";
 
-        public static string Compatible<TArgument, TTarget, T>(this IGuard _)
+        public static string Compatible<TArgument, TTarget>(this IGuard _)
             => $"{typeof(TArgument)} must be assignable to type {typeof(TTarget)}.";
 
         public static string NotCompatible<TArgument, TTarget>(this IGuard _)
             => $"{typeof(TArgument)} cannot be assignable to type {typeof(TTarget)}.";
 
-        public static string Min<T>(T input, T minInput)
-            => $"{input.GetType().Name} cannot be less than {minInput}.";
+        public static string Min<T>(T input, T minimum)
+            => $"{input.GetType().Name} cannot be less than {minimum}.";
 
         public static string GreaterThan<T>(T input, T other)
             => $"{input.GetType().Name} must be greater than {other}.";
