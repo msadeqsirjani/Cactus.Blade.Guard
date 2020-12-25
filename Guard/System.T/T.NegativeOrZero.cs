@@ -19,7 +19,7 @@ public static partial class GuardExtension
         paramName ??= nameof(input);
         message ??= Message.NegativeOrZero(paramName);
 
-        if (input.CompareTo(default(T)) <= 0)
+        if (input.CompareTo(default(T)) > 0)
             throw new ArgumentException(message, paramName);
 
         return guard;
