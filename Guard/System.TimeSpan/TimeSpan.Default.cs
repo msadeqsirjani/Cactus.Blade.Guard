@@ -5,12 +5,12 @@ public static partial class GuardExtension
 {
     public static IGuard Default(this IGuard _, TimeSpan input)
     {
-        return Guard.MustBe.Default(input, null, null);
+        return Guard.MustBe.Default<TimeSpan>(input);
     }
 
     public static IGuard Default(this IGuard _, TimeSpan input, string paramName)
     {
-        return Guard.MustBe.Default(input, paramName, null);
+        return Guard.MustBe.Default<TimeSpan>(input, paramName);
     }
 
     public static IGuard Default(this IGuard _, TimeSpan input, string paramName, string message)
