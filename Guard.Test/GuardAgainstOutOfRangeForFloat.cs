@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Guard.Test
 {
-    public class GuardAgainstOutOfRangeForFloat
+    public class GuardMustBeOutOfRangeForFloat
     {
         [Theory]
         [InlineData(1.0, 1.0, 1.0)]
@@ -13,7 +13,7 @@ namespace Guard.Test
         [InlineData(3.0, 1.0, 3.0)]
         public void DoesNothingGivenInRangeValue(float input, float rangeFrom, float rangeTo)
         {
-            Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo);
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo);
         }
 
         [Theory]
@@ -22,7 +22,7 @@ namespace Guard.Test
         [InlineData(4.0, 1.0, 3.0)]
         public void ThrowsGivenOutOfRangeValue(float input, float rangeFrom, float rangeTo)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -31,7 +31,7 @@ namespace Guard.Test
         [InlineData(4.0, 3.0, 1.0)]
         public void ThrowsGivenInvalidArgumentValue(float input, float rangeFrom, float rangeTo)
         {
-            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -41,7 +41,7 @@ namespace Guard.Test
         [InlineData(3.0, 1.0, 3.0, 3.0)]
         public void ReturnsExpectedValueGivenInRangeValue(float input, float rangeFrom, float rangeTo, float expected)
         {
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
     }
 }
