@@ -19,7 +19,7 @@ public static partial class GuardExtension
         paramName ??= nameof(input);
         message ??= Message.Null(paramName);
 
-        if (input is null)
+        if (input != null)
             throw new ArgumentNullException(paramName, message);
 
         return guard;
