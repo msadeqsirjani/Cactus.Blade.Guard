@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Guard.Test
 {
-    public class GuardAgainstOutOfRangeForDateTime
+    public class GuardMustBeOutOfRangeForDateTime
     {
         [Theory]
         [InlineData(0, 0)]
@@ -16,7 +16,7 @@ namespace Guard.Test
             var input = DateTime.Now;
             var rangeFrom = input.AddSeconds(rangeFromOffset);
             var rangeTo = input.AddSeconds(rangeToOffset);
-            Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo);
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo);
         }
 
         [Theory]
@@ -27,7 +27,7 @@ namespace Guard.Test
             var input = DateTime.Now;
             var rangeFrom = input.AddSeconds(rangeFromOffset);
             var rangeTo = input.AddSeconds(rangeToOffset);
-            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -38,7 +38,7 @@ namespace Guard.Test
             var input = DateTime.Now;
             var rangeFrom = input.AddSeconds(rangeFromOffset);
             var rangeTo = input.AddSeconds(rangeToOffset);
-            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(DateTime.Now, "index", rangeFrom, rangeTo));
+            Assert.Throws<ArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(DateTime.Now, "index", rangeFrom, rangeTo));
         }
 
         [Theory]
@@ -52,7 +52,7 @@ namespace Guard.Test
             var expected = input;
             var rangeFrom = input.AddSeconds(rangeFromOffset);
             var rangeTo = input.AddSeconds(rangeToOffset);
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange(input, "index", rangeFrom, rangeTo));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange(input, "index", rangeFrom, rangeTo));
         }
     }
 }
