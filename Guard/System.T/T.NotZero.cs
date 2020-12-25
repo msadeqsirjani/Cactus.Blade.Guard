@@ -23,7 +23,7 @@ public static partial class GuardExtension
         paramName ??= nameof(input);
         message ??= Message.NotZero(paramName);
 
-        if (!EqualityComparer<T>.Default.Equals(input, default))
+        if (EqualityComparer<T>.Default.Equals(input, default))
             throw new ArgumentException(message, paramName);
 
         return guard;
