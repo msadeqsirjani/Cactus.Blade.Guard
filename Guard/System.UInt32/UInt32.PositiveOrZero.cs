@@ -4,12 +4,12 @@ public static partial class GuardExtension
 {
     public static IGuard PositiveOrZero(this IGuard _, uint input)
     {
-        return Guard.MustBe.PositiveOrZero(input, null, null);
+        return Guard.MustBe.PositiveOrZero<uint>(input);
     }
 
     public static IGuard PositiveOrZero(this IGuard _, uint input, string paramName)
     {
-        return Guard.MustBe.PositiveOrZero(input, paramName, null);
+        return Guard.MustBe.PositiveOrZero<uint>(input, paramName);
     }
 
     public static IGuard PositiveOrZero(this IGuard _, uint input, string paramName, string message)
