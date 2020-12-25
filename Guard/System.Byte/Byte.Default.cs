@@ -4,12 +4,12 @@ public static partial class GuardExtension
 {
     public static IGuard Default(this IGuard _, byte input)
     {
-        return Guard.MustBe.Default(input, null, null);
+        return Guard.MustBe.Default<byte>(input);
     }
 
     public static IGuard Default(this IGuard _, byte input, string paramName)
     {
-        return Guard.MustBe.Default(input, paramName, null);
+        return Guard.MustBe.Default<byte>(input, paramName);
     }
 
     public static IGuard Default(this IGuard _, byte input, string paramName, string message)
