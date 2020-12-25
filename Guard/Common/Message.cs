@@ -21,6 +21,9 @@ namespace Cactus.Blade.Guard.Common
         public static string Null<T>(T input)
             => $"{input.GetType().Name} must be null.";
 
+        public static string NotNull<T>(T input)
+            => $"{input.GetType().Name} must not be null.";
+
         public static string NotNull<T>(in IGuard _, T input)
             => $"{input.GetType().Name} cannot be null.";
 
