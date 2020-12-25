@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Guard.Test
 {
-    public class GuardAgainstOutOfRangeForEnum
+    public class GuardMustBeOutOfRangeForEnum
     {
         [Theory]
         [InlineData(0)]
@@ -15,7 +15,7 @@ namespace Guard.Test
         [InlineData(5)]
         public void DoesNothingGivenInRangeValue(int enumValue)
         {
-            Cactus.Blade.Guard.Guard.Against.OutOfRange<TestEnum>(enumValue, nameof(enumValue));
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange<TestEnum>(enumValue, nameof(enumValue));
         }
 
 
@@ -25,7 +25,7 @@ namespace Guard.Test
         [InlineData(10)]
         public void ThrowsGivenOutOfRangeValue(int enumValue)
         {
-            var exception = Assert.Throws<InvalidEnumArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange<TestEnum>(enumValue, nameof(enumValue)));
+            var exception = Assert.Throws<InvalidEnumArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange<TestEnum>(enumValue, nameof(enumValue)));
             Assert.Equal(nameof(enumValue), exception.ParamName);
         }
 
@@ -38,7 +38,7 @@ namespace Guard.Test
         [InlineData(TestEnum.Penguin)]
         public void DoesNothingGivenInRangeEnum(TestEnum enumValue)
         {
-            Cactus.Blade.Guard.Guard.Against.OutOfRange(enumValue, nameof(enumValue));
+            Cactus.Blade.Guard.Guard.MustBe.OutOfRange(enumValue, nameof(enumValue));
         }
 
 
@@ -48,7 +48,7 @@ namespace Guard.Test
         [InlineData((TestEnum)10)]
         public void ThrowsGivenOutOfRangeEnum(TestEnum enumValue)
         {
-            var exception = Assert.Throws<InvalidEnumArgumentException>(() => Cactus.Blade.Guard.Guard.Against.OutOfRange(enumValue, nameof(enumValue)));
+            var exception = Assert.Throws<InvalidEnumArgumentException>(() => Cactus.Blade.Guard.Guard.MustBe.OutOfRange(enumValue, nameof(enumValue)));
             Assert.Equal(nameof(enumValue), exception.ParamName);
         }
 
@@ -62,7 +62,7 @@ namespace Guard.Test
         public void ReturnsExpectedValueGivenInRangeValue(int enumValue)
         {
             var expected = enumValue;
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange<TestEnum>(enumValue, nameof(enumValue)));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange<TestEnum>(enumValue, nameof(enumValue)));
         }
 
         [Theory]
@@ -75,7 +75,7 @@ namespace Guard.Test
         public void ReturnsExpectedValueGivenInRangeEnum(TestEnum enumValue)
         {
             var expected = enumValue;
-            Assert.Equal(expected, Cactus.Blade.Guard.Guard.Against.OutOfRange(enumValue, nameof(enumValue)));
+            Assert.Equal(expected, Cactus.Blade.Guard.Guard.MustBe.OutOfRange(enumValue, nameof(enumValue)));
         }
 
     }
