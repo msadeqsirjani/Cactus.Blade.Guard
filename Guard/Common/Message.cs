@@ -69,8 +69,8 @@ namespace Cactus.Blade.Guard.Common
         public static string GreaterThan<T>(T input, T other)
             => $"{input.GetType().Name} must be greater than {other}.";
 
-        public static string Max<T>(T input, T maxInput)
-            => $"{input.GetType().Name} cannot be greater than {maxInput}.";
+        public static string Max<T>(T input, T maximum)
+            => $"{input.GetType().Name} cannot be greater than {maximum}.";
 
         public static string LessThan<T>(T input, T other)
             => $"{input.GetType().Name} must be less than {other}.";
