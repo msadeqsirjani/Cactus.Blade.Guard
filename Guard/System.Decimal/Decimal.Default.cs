@@ -4,12 +4,12 @@ public static partial class GuardExtension
 {
     public static IGuard Default(this IGuard _, decimal input)
     {
-        return Guard.MustBe.Default(input, null, null);
+        return Guard.MustBe.Default<decimal>(input);
     }
 
     public static IGuard Default(this IGuard _, decimal input, string paramName)
     {
-        return Guard.MustBe.Default(input, paramName, null);
+        return Guard.MustBe.Default<decimal>(input, paramName);
     }
 
     public static IGuard Default(this IGuard _, decimal input, string paramName, string message)
