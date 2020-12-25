@@ -1,4 +1,5 @@
 ﻿using Cactus.Blade.Guard;
+using Cactus.Blade.Guard.Common;
 using System;
 
 public static partial class GuardExtension
@@ -10,11 +11,9 @@ public static partial class GuardExtension
     /// <param name="_"></param>
     /// <param name="input"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuard _, string input)
+    public static IGuard Null(this IGuard _, string input)
     {
-        input = Guard.MustBe.Null(input, null, null);
-
-        return input;
+        return Guard.MustBe.Null(input, null, null);
     }
 
     /// <summary>
@@ -25,11 +24,9 @@ public static partial class GuardExtension
     /// <param name="input"></param>
     /// <param name="parameter"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuard _, string input, string parameter)
+    public static IGuard Null(this IGuard _, string input, string parameter)
     {
-        input = Guard.MustBe.Null(input, parameter, null);
-
-        return input;
+        return Guard.MustBe.Null(input, parameter, null);
     }
 
     /// <summary>
@@ -41,14 +38,14 @@ public static partial class GuardExtension
     /// <param name="paramName"></param>
     /// <param name="message"></param>
     /// <returns><paramref name="input" /> if the value is not null.</returns>
-    public static string Null(this IGuard _, string input, string paramName, string message)
+    public static IGuard Null(this IGuard _, string input, string paramName, string message)
     {
         paramName ??= nameof(input);
-        message ??= $"Required input {paramName} was null.";
+        message ??= Message.Null(paramName);
 
         if (input.IsNull())
             throw new ArgumentNullException(paramName, message);
 
-        return input;
+        return _;
     }
 }
