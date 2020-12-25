@@ -96,9 +96,6 @@ namespace Cactus.Blade.Guard.Common
         public static string NegativeOrZero<T>(T input)
             => $"{input.GetType().Name} must be less than or equal to zero.";
 
-        public static string NotNegative<T>(T input)
-            => $"{input.GetType().Name} must be zero or greater.";
-
         public static string InRange<T>(T input, T minInput, T maxInput)
             => $"{input.GetType().Name} must be between {minInput} and {maxInput}";
 
